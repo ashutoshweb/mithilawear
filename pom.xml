@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.ashu</groupId>
-    <artifactId>reactspringboot</artifactId>
+    <artifactId>mithilawear</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>reactspringboot</name>
     <description>Demo project for Spring Boot with React</description>
