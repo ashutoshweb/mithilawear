@@ -1,6 +1,6 @@
 import React from 'react';
 
-import MithilaBuyingComponent from './MithilaBuyingComponent';
+import {Link} from 'react-router-dom';
 
 class MithilaProductComponent extends React.Component{
 
@@ -119,8 +119,34 @@ let product = this.state.product;
                                 <span className="carousel-control-next-icon"></span>
                             </a>
                         </div>
-                        <div className="mb-5">
-                            <button className="btn btn-outline-primary" type="button">Add to Cart</button>
+                        <div className="  mb-5">
+
+
+                            <form>
+                                <div className=" row ">
+
+                                    <div className=" col-sm-6 mb-2">
+                                        <Link to ="/order">
+                                            <button className=" btn btn-outline-primary  w-auto" type="submit">Add to Cart</button>
+                                        </Link>
+                                        <select className="form-control w-25 d-inline" id="sel1" name="sellist1">
+                                            <option selected>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                        </select>
+                                    </div>
+
+                                    <div className=" col-sm-2">
+                                    </div>
+                                    <div className=" col-sm-4">
+                                        <Link to ="/order">
+                                        <button className="btn btn-outline-primary w-50" type="button">Buy</button>
+                                        </Link>
+                                    </div>
+                                </div>
+                            </form >
+
                         </div>
 
 
@@ -142,7 +168,7 @@ let product = this.state.product;
                     </div>
                 </div>
 
-                <MithilaBuyingComponent itemCode={product.id}/>
+
             </div>
         )
     }

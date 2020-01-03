@@ -5,6 +5,7 @@ import './App.css';
 import MithilaNavComponent from './MithilaNavComponent';
 import MithilaCardComponent from './MithilaCardComponent';
 import MithilaProductComponent from './MithilaProductComponent';
+import MithilaBuyingComponent from "./MithilaBuyingComponent";
 
 class App extends React.Component {
 
@@ -24,9 +25,13 @@ class App extends React.Component {
                 <BrowserRouter>
                     <MithilaNavComponent/>
 
+
                     <Route path="/" exact component ={MithilaCardComponent} />
                     <Route path="/products/:id" component = {MithilaProductComponent }/>
+                    <Route path="/order" component = { MithilaBuyingComponent}/>
+
                 </BrowserRouter>
+
 
 
             </div>
