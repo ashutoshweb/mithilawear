@@ -13,6 +13,22 @@ class MithilaCardComponent extends React.Component{
                 "small" : "https://images.unsplash.com/photo-1526010900697-bf1e1d70ae5c?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max",
                 "regular" : "https://images.unsplash.com/photo-1526010900697-bf1e1d70ae5c?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max"
             }
+        }],
+        products_all : [{
+
+            "productId": "",
+            "product_name" : " ",
+            "imageName" : " ",
+            "image_url" : " ",
+            "image_url_detail" : " ",
+            "image_dimension" : " ",
+            "product_type" : " ",
+            "product_category" : " ",
+            "product_price" : " ",
+            "product_description" : " ",
+            "product_created_by" : " ",
+            "product_status" : " ",
+            "Timestamp product_load_time" : "  "
         }]
     };
 
@@ -21,14 +37,14 @@ class MithilaCardComponent extends React.Component{
     componentDidMount() {
 
 
-        fetch("/api/v1/products")
+        fetch("/api/v1/productsfrompg")
             .then(res => res.json())
             .then(
                 (result) => {
                     console.log("result ",result)
                     this.setState({
 
-                        products: result
+                        products_all: result
                     });
                 },
                 // Note: it's important to handle errors here
@@ -38,15 +54,21 @@ class MithilaCardComponent extends React.Component{
                     console.log("error ",error)
                     this.setState({
 
-                        products:[{"id": "1",
-                            "image" : "https://source.unsplash.com/random/300x200",
-                            "name": "Product 1",
-                            "title":"title 1",
-                            "alt_description" : "",
-                                "urls":{
-                            "small" : "https://images.unsplash.com/photo-1526010900697-bf1e1d70ae5c?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max",
-                            "regular" : "https://images.unsplash.com/photo-1526010900697-bf1e1d70ae5c?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max"
-                        }
+                        products_all : [{
+
+                            "productId": "",
+                            "product_name" : " ",
+                            "imageName" : " ",
+                            "image_url" : " ",
+                            "image_url_detail" : " ",
+                            "image_dimension" : " ",
+                            "product_type" : " ",
+                            "product_category" : " ",
+                            "product_price" : " ",
+                            "product_description" : " ",
+                            "product_created_by" : " ",
+                            "product_status" : " ",
+                            "Timestamp product_load_time" : "  "
                         }]
                     });
                 }
@@ -60,23 +82,25 @@ render(){
 
     let productList =[];
 
-    productList = this.state.products.map(card =>{
+    productList = this.state.products_all.map(card =>{
 
         return (
             <div className="card">
                 <div className="card-header">
-                    Item Code : #{card.id}
+                    Item Code : #{card.imageName}
                 </div>
-                <img className="card-img-top img-fluid" src= {card.urls.small} alt=""/>
+                <img className="card-img-top img-fluid" src= {card.image_url} alt=""/>
 
                 <div className="card-body">
-                    <h4 className="card-title"> {card.alt_description}</h4>
-                    <p className="card-text"> {card.alt_description} </p>
-                    <Link to={`/products/${card.id}`} className="btn btn-success btn-block" href="#">Order</Link>
+                    <h4 className="card-title"> {card.product_name}</h4>
+                    <p className="card-text"> Price : Rs. {card.product_price} </p>
+                    <Link to={`/products/${card.productId}`} className="btn btn-success btn-block" href="#">Order</Link>
                 </div>
             </div>
         )
     });
+
+    console.log("productList=",productList);
 
     return(
         <div className="container mt-5">

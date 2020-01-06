@@ -1,5 +1,6 @@
 package com.ashu.reactspringboot;
 
+import com.ashu.reactspringboot.product.model.Product;
 import com.ashu.reactspringboot.product.service.IProductOperations;
 import com.ashu.reactspringboot.response.UnsplashResponse;
 import org.slf4j.Logger;
@@ -17,6 +18,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/v1")
+@CrossOrigin
 public class ProductController {
 
     private static final Logger logger = LoggerFactory.getLogger(ProductController.class);
@@ -30,6 +32,9 @@ public class ProductController {
     private static List<Map> products = new ArrayList();
 
     private static List<Map> allProducts = new ArrayList();
+
+    private static List<Map> allProducts_PostGres = new ArrayList();
+
     static {
         Map product1 = new HashMap();
 
@@ -106,6 +111,15 @@ public class ProductController {
     public List findAllProducts( ){
 
         return postGressProductService.getProducts();
+
+
+    }
+
+    @GetMapping(path = "/productsfrompg/{id}")
+    public Product findAProductByid(@PathVariable final Long id ){
+
+
+        return postGressProductService.getProductById(id);
 
 
     }

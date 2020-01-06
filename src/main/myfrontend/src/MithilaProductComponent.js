@@ -18,6 +18,23 @@ class MithilaProductComponent extends React.Component{
             "user" :{
                 "name" : ""
             }
+        },
+
+        product_single : {
+
+            "productId": "",
+            "product_name" : " ",
+            "imageName" : " ",
+            "image_url" : " ",
+            "image_url_detail" : " ",
+            "image_dimension" : " ",
+            "product_type" : " ",
+            "product_category" : " ",
+            "product_price" : " ",
+            "product_description" : " ",
+            "product_created_by" : " ",
+            "product_status" : " ",
+            "Timestamp product_load_time" : "  "
         }
     };
 
@@ -26,14 +43,14 @@ class MithilaProductComponent extends React.Component{
     componentDidMount() {
 
 const productid = this.props.match.params.id;
-        fetch(`/api/v1/products/${productid}`)
+        fetch(`/api/v1/productsfrompg/${productid}`)
             .then(res => res.json())
             .then(
                 (result) => {
                     console.log("product in Prod Component ",result)
                     this.setState({
 
-                        product: result
+                        product_single: result
                     });
                 },
                 // Note: it's important to handle errors here
@@ -43,18 +60,21 @@ const productid = this.props.match.params.id;
                     console.log("error ",error)
                     this.setState({
 
-                        product:{"id": "1",
-                            "image" : "https://source.unsplash.com/random/300x200",
-                            "name": "Product 1",
-                            "title":"title 1",
-                            "alt_description" : "xyz",
-                            "urls":{
-                                "small" : "https://images.unsplash.com/photo-1526010900697-bf1e1d70ae5c?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max",
-                                "regular" : "https://images.unsplash.com/photo-1526010900697-bf1e1d70ae5c?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max"
-                            },
-                            "user" :{
-                                "name" : ""
-                            }
+                        product_single : {
+
+                            "productId": "",
+                            "product_name" : " ",
+                            "imageName" : " ",
+                            "image_url" : " ",
+                            "image_url_detail" : " ",
+                            "image_dimension" : " ",
+                            "product_type" : " ",
+                            "product_category" : " ",
+                            "product_price" : " ",
+                            "product_description" : " ",
+                            "product_created_by" : " ",
+                            "product_status" : " ",
+                            "Timestamp product_load_time" : "  "
                         }
                     });
                 }
@@ -65,7 +85,7 @@ const productid = this.props.match.params.id;
 
     render() {
 
-let product = this.state.product;
+let product = this.state.product_single;
 
 
 
@@ -97,16 +117,16 @@ let product = this.state.product;
                             </ol>
                             <div className="carousel-inner">
                                 <div className="carousel-item active">
-                                    <img className="d-block img-fluid" src={product.urls.regular}
-                                         aria-label={product.alt_description}/>
+                                    <img className="d-block img-fluid" src={product.image_url_detail}
+                                         aria-label={product.product_name}/>
                                 </div>
                                 <div className="carousel-item">
-                                    <img className="d-block img-fluid" src={product.urls.regular}
-                                         aria-label={product.alt_description}/>
+                                    <img className="d-block img-fluid" src={product.image_url_detail}
+                                         aria-label={product.product_name}/>
                                 </div>
                                 <div className="carousel-item">
-                                    <img className="d-block img-fluid" src={product.urls.regular}
-                                         aria-label={product.alt_description}/>
+                                    <img className="d-block img-fluid" src={product.image_url_detail}
+                                         aria-label={product.product_name}/>
                                 </div>
                             </div>
 
@@ -160,9 +180,9 @@ let product = this.state.product;
 
 
                             <div className="card-body">
-                                <h4 className="card-title">{product.alt_description}</h4>
-                                <div className="card-text"> Description : {product.alt_description}</div>
-                                <div className="card-text"> Created by : {product.user.name} </div>
+                                <h4 className="card-title">{product.product_name}</h4>
+                                <div className="card-text"> Description : {product.product_description}</div>
+                                <div className="card-text"> Created by : {product.product_created_by} </div>
                             </div>
                         </div>
                     </div>

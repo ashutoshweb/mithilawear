@@ -2,6 +2,7 @@ package com.ashu.reactspringboot.product.model;
 
 import lombok.Data;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -14,12 +15,28 @@ import java.sql.Timestamp;
 public class Product implements Serializable {
 
     @Id
+    @Column(name="product_id")
+    private long productId;
+
+
     private String product_name;
-    private String image_name;
+
+    @Column(name="image_name")
+    private String imageName;
+
+
     private String image_url;
+
+
     private String image_url_detail;
+
+
     private String image_dimension;
+
+
     private String product_type;
+
+
     private String product_category;
     private double product_price;
     private String product_description;
