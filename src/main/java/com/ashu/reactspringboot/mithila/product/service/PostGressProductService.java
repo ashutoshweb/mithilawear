@@ -1,8 +1,7 @@
-package com.ashu.reactspringboot.product.service;
+package com.ashu.reactspringboot.mithila.product.service;
 
-import com.ashu.reactspringboot.IProductService;
-import com.ashu.reactspringboot.product.model.Product;
-import com.ashu.reactspringboot.product.repository.ProductRepository;
+import com.ashu.reactspringboot.mithila.product.model.Product;
+import com.ashu.reactspringboot.mithila.product.repository.ProductRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,10 +10,10 @@ import java.util.List;
 
 
 @Service
-public class PostGressProductService implements IProductOperations {
+public class PostGressProductService /*implements IProductOperations*/ {
 
-    @Autowired
-    ProductRepository iProductRepository;
+  //  @Autowired
+  /*//  ProductRepository iProductRepository;
 
 
     @Override
@@ -25,5 +24,5 @@ public class PostGressProductService implements IProductOperations {
     @Override
     public Product getProductById(Long id) {
         return iProductRepository.findByProductId(id);
-    }
+    }*/
 }

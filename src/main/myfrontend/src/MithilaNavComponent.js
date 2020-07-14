@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 
 
-const MithilaNavComponent = ()=>{
+const MithilaNavComponent1 = ()=>{
 
 
         return(
@@ -27,6 +27,7 @@ const MithilaNavComponent = ()=>{
                                     <a className="nav-link" href="#">Pottery</a>
                                 </li>
                             </ul>
+
 
                                 <ul className="navbar-nav ml-auto">
                                 <li className="nav-item">
@@ -60,5 +61,5 @@ const MithilaNavComponent = ()=>{
 
 };
 
-export default MithilaNavComponent;
+export default MithilaNavComponent1;
 

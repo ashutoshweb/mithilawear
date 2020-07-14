@@ -16,12 +16,15 @@
 
     <properties>
         <java.version>1.8</java.version>
+        <version.maven-install-plugin>2.5.2</version.maven-install-plugin>
+        <version.non-maven1>1.0.0</version.non-maven1>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+
         </dependency>
 
         <dependency>
@@ -33,15 +36,22 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-webflux</artifactId>
+            <exclusions>
+                <exclusion>
+                    <artifactId>slf4j-api</artifactId>
+                    <groupId>org.slf4j</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.projectreactor</groupId>
             <artifactId>reactor-spring</artifactId>
             <version>1.0.1.RELEASE</version>
+
         </dependency>
 
 
-        <dependency>
+       <!-- <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
             <scope>runtime</scope>
@@ -50,19 +60,75 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
-        </dependency>
+
+        </dependency>-->
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.junit.vintage</groupId>
-                    <artifactId>junit-vintage-engine</artifactId>
-                </exclusion>
-            </exclusions>
+
         </dependency>
+
+        <dependency>
+            <groupId>org.jcodec</groupId>
+            <artifactId>jcodec</artifactId>
+            <version>0.2.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jcodec</groupId>
+            <artifactId>jcodec-javase</artifactId>
+            <version>0.2.3</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.0</version>
+        </dependency>
+
+
+        <!--<dependency>
+            <groupId>mnbnmbgfvb</groupId>
+            <artifactId>nmvhcvhjvhjv</artifactId>
+            <scope>system</scope>
+            <version>1.8</version>
+            <systemPath>${project.basedir}/src/main/lib/license.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>jbsdcjbds</groupId>
+            <artifactId>mnbdsmnbfdmn</artifactId>
+            <scope>system</scope>
+            <version>1.8</version>
+            <systemPath>${project.basedir}/src/main/lib/jniwrap-3.12.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>jdk.tools</groupId>
+            <artifactId>jdk.tools</artifactId>
+            <scope>system</scope>
+            <version>1.8</version>
+            <systemPath>${project.basedir}/src/main/lib/jxcapture-3.5.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>mncbdmnb</groupId>
+            <artifactId>ndsfbdsnmb</artifactId>
+            <scope>system</scope>
+            <version>1.8</version>
+            <systemPath>${project.basedir}/src/main/lib/slf4j-simple-1.5.8.jar</systemPath>
+        </dependency>-->
+        <dependency>
+            <groupId>jmndbckjb</groupId>
+            <artifactId>mnbdsmcb</artifactId>
+            <scope>system</scope>
+            <version>1.8</version>
+            <systemPath>${project.basedir}/src/main/lib/slf4j-api-1.5.8.jar</systemPath>
+        </dependency>
+
+
     </dependencies>
 
     <build>
@@ -70,13 +136,16 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <includeSystemScope>true</includeSystemScope>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>com.github.eirslett</groupId>
                 <artifactId>frontend-maven-plugin</artifactId>
                 <version>1.7.6</version>
                 <executions>
-                    <execution>
+                    <!--<execution>
                         <id>Install node and npm</id>
                         <goals>
                             <goal>install-node-and-npm</goal>
@@ -97,7 +166,7 @@
                         <configuration>
                             <arguments>install</arguments>
                         </configuration>
-                    </execution>
+                    </execution>-->
 
                     <execution>
                         <id>build react application</id>
@@ -139,6 +208,8 @@
                 </executions>
 
             </plugin>
+
+
         </plugins>
     </build>
 

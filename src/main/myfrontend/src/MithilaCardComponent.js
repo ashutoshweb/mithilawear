@@ -16,9 +16,9 @@ class MithilaCardComponent extends React.Component{
         }],
         products_all : [{
 
-            "productId": "",
+            "product_id": "",
             "product_name" : " ",
-            "imageName" : " ",
+            "image_name" : " ",
             "image_url" : " ",
             "image_url_detail" : " ",
             "image_dimension" : " ",
@@ -37,7 +37,7 @@ class MithilaCardComponent extends React.Component{
     componentDidMount() {
 
 
-        fetch("/api/v1/productsfrompg")
+        fetch("/api/v2/products")
             .then(res => res.json())
             .then(
                 (result) => {
@@ -56,9 +56,9 @@ class MithilaCardComponent extends React.Component{
 
                         products_all : [{
 
-                            "productId": "",
+                            "product_id": "",
                             "product_name" : " ",
-                            "imageName" : " ",
+                            "image_name" : " ",
                             "image_url" : " ",
                             "image_url_detail" : " ",
                             "image_dimension" : " ",
@@ -87,14 +87,14 @@ render(){
         return (
             <div className="card">
                 <div className="card-header">
-                    Item Code : #{card.imageName}
+                    Item Code : #{card.image_name}
                 </div>
                 <img className="card-img-top img-fluid" src= {card.image_url} alt=""/>
 
                 <div className="card-body">
                     <h4 className="card-title"> {card.product_name}</h4>
                     <p className="card-text"> Price : Rs. {card.product_price} </p>
-                    <Link to={`/products/${card.productId}`} className="btn btn-success btn-block" href="#">Order</Link>
+                    <Link to={`/products/${card.product_id}`} className="btn btn-success btn-block" href="#">Order</Link>
                 </div>
             </div>
         )

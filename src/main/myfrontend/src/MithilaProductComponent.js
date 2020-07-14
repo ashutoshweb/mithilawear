@@ -22,9 +22,9 @@ class MithilaProductComponent extends React.Component{
 
         product_single : {
 
-            "productId": "",
+            "product_id": "",
             "product_name" : " ",
-            "imageName" : " ",
+            "image_name" : " ",
             "image_url" : " ",
             "image_url_detail" : " ",
             "image_dimension" : " ",
@@ -43,7 +43,7 @@ class MithilaProductComponent extends React.Component{
     componentDidMount() {
 
 const productid = this.props.match.params.id;
-        fetch(`/api/v1/productsfrompg/${productid}`)
+        fetch(`/api/v2/products/${productid}`)
             .then(res => res.json())
             .then(
                 (result) => {
@@ -62,9 +62,9 @@ const productid = this.props.match.params.id;
 
                         product_single : {
 
-                            "productId": "",
+                            "product_id": "",
                             "product_name" : " ",
-                            "imageName" : " ",
+                            "image_name" : " ",
                             "image_url" : " ",
                             "image_url_detail" : " ",
                             "image_dimension" : " ",

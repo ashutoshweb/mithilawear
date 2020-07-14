@@ -36,3 +36,24 @@
     transform: rotate(360deg);
   }
 }
+
+
+#home-heading {
+  position: relative;
+
+  background: url('http://mithilaorigin.com/images/vds/vds-abstract-5.jpg');
+  background-attachment: fixed;
+  background-repeat: repeat-x;
+  text-align: center;
+  color: #fff;
+}
+
+#background-contact {
+  position: relative;
+  min-height: 200px;
+  background: url('http://mithilaorigin.com/images/vds/vds-abstract-5.jpg');
+  background-attachment: fixed;
+  background-repeat: repeat-x;
+  text-align: center;
+
+}

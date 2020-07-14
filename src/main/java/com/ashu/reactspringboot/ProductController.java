@@ -1,7 +1,7 @@
 package com.ashu.reactspringboot;
 
-import com.ashu.reactspringboot.product.model.Product;
-import com.ashu.reactspringboot.product.service.IProductOperations;
+import com.ashu.reactspringboot.mithila.product.model.Product;
+import com.ashu.reactspringboot.mithila.product.service.IProductOperations;
 import com.ashu.reactspringboot.response.UnsplashResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -110,7 +110,10 @@ public class ProductController {
     @GetMapping(path = "/productsfrompg")
     public List findAllProducts( ){
 
-        return postGressProductService.getProducts();
+       // return postGressProductService.getProducts();
+
+        return null;
+
 
 
     }
@@ -119,7 +122,8 @@ public class ProductController {
     public Product findAProductByid(@PathVariable final Long id ){
 
 
-        return postGressProductService.getProductById(id);
+      //  return postGressProductService.getProductById(id);
+        return null;
 
 
     }

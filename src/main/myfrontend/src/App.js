@@ -2,10 +2,19 @@ import React,{Component} from 'react';
 import {BrowserRouter, Route, Link} from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
-import MithilaNavComponent from './MithilaNavComponent';
+
 import MithilaCardComponent from './MithilaCardComponent';
 import MithilaProductComponent from './MithilaProductComponent';
 import MithilaBuyingComponent from "./MithilaBuyingComponent";
+import MiAdminComponent from "./MiAdminComponent";
+import MiAdminNavComponent from "./MiAdminNavComponent";
+import TSVDSMainComponent from "./tsvds/TSVDSMainComponent";
+
+import VdsMainComponent from "./vds/VdsMainComponent";
+import  VdsHeaderComponent from "./vds/VdsHeaderComponent"
+
+
+import VdsAboutUsComponent from "./vds/VdsAboutUsComponent";
 
 class App extends React.Component {
 
@@ -23,12 +32,23 @@ class App extends React.Component {
 
             <div className="App">
                 <BrowserRouter>
-                    <MithilaNavComponent/>
 
 
-                    <Route path="/" exact component ={MithilaCardComponent} />
-                    <Route path="/products/:id" component = {MithilaProductComponent }/>
-                    <Route path="/order" component = { MithilaBuyingComponent}/>
+
+
+                    <VdsHeaderComponent/>
+
+                    <Route path="/" exact component = { TSVDSMainComponent}/>
+
+                    <Route path="/#home" exact component = { TSVDSMainComponent}/>
+
+                    <Route path="/#contact" exact component = { VdsMainComponent}/>
+
+                    <Route path="/#about" exact component = { VdsAboutUsComponent}/>
+
+
+
+
 
                 </BrowserRouter>
 

@@ -30,7 +30,7 @@ names.add("Ashapur");
     @GetMapping(path = "/kule")
     public String sayHelloToKule( ){
 
-            return "Hello, Amarpreet Kule Ka Pule";
+            return "Hello, scjhgd Kule Ka Pule";
     }
 
     @GetMapping(path = "/chaina")
